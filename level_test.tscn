@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dfap2j2to0g7m"]
+
+[node name="LevelTest" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_right = 1152.0
+offset_bottom = 648.0
