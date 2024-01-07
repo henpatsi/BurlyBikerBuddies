@@ -1,9 +1,28 @@
-[gd_scene format=3 uid="uid://dfap2j2to0g7m"]
+[gd_scene load_steps=3 format=3 uid="uid://dfap2j2to0g7m"]
+
+[ext_resource type="Texture2D" uid="uid://tgmgbpc6afsb" path="res://bar.png" id="1_msao1"]
+[ext_resource type="Texture2D" uid="uid://2sept5vo5dng" path="res://table.png" id="2_ykpy8"]
 
 [node name="LevelTest" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -10
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+z_index = -100
 offset_right = 1152.0
 offset_bottom = 648.0
+texture = ExtResource("1_msao1")
+
+[node name="Table" type="Sprite2D" parent="."]
+z_index = -50
+position = Vector2(848, 377)
+texture = ExtResource("2_ykpy8")
+
+[node name="Table2" type="Sprite2D" parent="."]
+position = Vector2(582, 466)
+texture = ExtResource("2_ykpy8")
+
+[node name="Table3" type="Sprite2D" parent="."]
+position = Vector2(930, 550)
+texture = ExtResource("2_ykpy8")
