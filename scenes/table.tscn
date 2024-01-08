@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddshbf5is1qw0"]
+
+[ext_resource type="Script" path="res://scripts/table.gd" id="1_04xs8"]
+[ext_resource type="Texture2D" uid="uid://2sept5vo5dng" path="res://images/table.png" id="1_us0i2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qnqcv"]
+font_size = 30
+
+[node name="table" type="Node2D"]
+script = ExtResource("1_04xs8")
+
+[node name="Table" type="Sprite2D" parent="."]
+z_index = -50
+texture = ExtResource("1_us0i2")
+
+[node name="Label" type="Label" parent="Table"]
+offset_left = -17.0
+offset_top = -63.0
+offset_right = 23.0
+offset_bottom = -21.0
+text = "1"
+label_settings = SubResource("LabelSettings_qnqcv")
+horizontal_alignment = 1
+vertical_alignment = 1
