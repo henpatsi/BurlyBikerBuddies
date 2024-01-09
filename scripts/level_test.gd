@@ -11,15 +11,18 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var patron = get_node_or_null(patron_spawn.name + "/patron")
+	handle_patrons(delta)
 
+func	handle_patrons(delta):
+	var patron = get_node_or_null(patron_spawn.name + "/patron")
 	if (patron != null):
 		return
-
 	timer += delta
 	if (timer < time_between_patrons):
 		return
+	instantiate_new_patron()
 
+func	instantiate_new_patron():
 	print("Instantiating new patron")
 	var scn = load("res://scenes/patron.tscn")
 	var new_patron = scn.instantiate()
