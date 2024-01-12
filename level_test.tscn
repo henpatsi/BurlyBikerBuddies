@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfap2j2to0g7m"]
+[gd_scene load_steps=7 format=3 uid="uid://dfap2j2to0g7m"]
 
 [ext_resource type="Script" path="res://scripts/level_test.gd" id="1_2wxkj"]
 [ext_resource type="Texture2D" uid="uid://tgmgbpc6afsb" path="res://images/bar.png" id="1_msao1"]
 [ext_resource type="PackedScene" uid="uid://ddshbf5is1qw0" path="res://scenes/table.tscn" id="2_n7k1v"]
 [ext_resource type="Script" path="res://scripts/stats_label.gd" id="4_4kncd"]
 [ext_resource type="Script" path="res://scripts/stats_tracker.gd" id="5_61pai"]
+[ext_resource type="Texture2D" uid="uid://dndvnsyuk8lx5" path="res://images/characters/Side_Short_Neutral_OriginalSize.png" id="6_usya7"]
 
 [node name="LevelTest" type="Node2D"]
 script = ExtResource("1_2wxkj")
@@ -59,6 +60,11 @@ offset_left = 964.0
 offset_top = 4.0
 offset_right = 1004.0
 offset_bottom = 27.0
+
+[node name="SideShortNeutralOriginalSize" type="Sprite2D" parent="."]
+position = Vector2(386, 437)
+scale = Vector2(2.57222, 2.57222)
+texture = ExtResource("6_usya7")
 
 [editable path="tables/table2"]
 [editable path="tables/table3"]
