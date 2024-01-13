@@ -16,16 +16,17 @@ script = ExtResource("1_twgjg")
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -100
-position = Vector2(576, 324)
+position = Vector2(480, 270)
+scale = Vector2(0.833333, 0.833333)
 texture = ExtResource("2_q21lu")
 
 [node name="tables" type="Node" parent="."]
 
 [node name="table1" parent="tables" instance=ExtResource("3_dxibd")]
-position = Vector2(885, 380)
+position = Vector2(643, 301)
 
 [node name="table2" parent="tables" instance=ExtResource("3_dxibd")]
-position = Vector2(527, 472)
+position = Vector2(477, 409)
 
 [node name="Table" parent="tables/table2" index="0"]
 z_index = -40
@@ -37,7 +38,7 @@ z_index = -40
 text = "2"
 
 [node name="table3" parent="tables" instance=ExtResource("3_dxibd")]
-position = Vector2(764, 548)
+position = Vector2(763, 442)
 
 [node name="Table" parent="tables/table3" index="0"]
 z_index = -30
@@ -49,35 +50,36 @@ z_index = -30
 text = "3"
 
 [node name="PatronSpawn" type="Node2D" parent="."]
-position = Vector2(77, 624)
+position = Vector2(62, 507)
 
 [node name="StatsLabel" type="Label" parent="PatronSpawn"]
 z_index = 50
-offset_left = 190.0
-offset_top = -97.0
-offset_right = 276.0
-offset_bottom = -48.0
+offset_left = 120.0
+offset_top = -73.0
+offset_right = 206.0
+offset_bottom = -24.0
 script = ExtResource("4_n6gf5")
 
 [node name="PatronInfo" parent="." instance=ExtResource("5_nimfu")]
 visible = false
 z_index = 50
-position = Vector2(130, 103)
+position = Vector2(128, 114)
 script = ExtResource("6_f8xyf")
 
 [node name="PatronInfoLabel" parent="PatronInfo" index="0"]
 script = ExtResource("7_6esmp")
 
 [node name="MoneyLabel" type="Label" parent="."]
-offset_left = 955.0
-offset_top = 44.0
-offset_right = 1060.0
-offset_bottom = 72.0
+offset_left = 801.0
+offset_top = 30.0
+offset_right = 906.0
+offset_bottom = 58.0
 text = "Money: 0 $"
 label_settings = SubResource("LabelSettings_qwdqr")
 
 [node name="LevelTimeBar" type="ProgressBar" parent="."]
-offset_right = 1152.0
+offset_left = 1.0
+offset_right = 959.0
 offset_bottom = 13.0
 value = 100.0
 show_percentage = false
