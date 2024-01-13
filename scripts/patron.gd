@@ -24,12 +24,6 @@ func _process(delta):
 	put_patron_to_table()
 	
 func get_input():
-	if (Input.is_action_just_pressed("select_table1")):
-		table = get_node("/root/Level/tables/table1")
-	if (Input.is_action_just_pressed("select_table2")):
-		table = get_node("/root/Level/tables/table2")
-	if (Input.is_action_just_pressed("select_table3")):
-		table = get_node("/root/Level/tables/table3")
 	if (Input.is_action_just_pressed("select_table")):
 		table = level.get_target_table()
 	

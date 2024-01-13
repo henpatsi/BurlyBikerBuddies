@@ -16,38 +16,22 @@ script = ExtResource("1_twgjg")
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -100
-position = Vector2(480, 270)
-scale = Vector2(0.833333, 0.833333)
+position = Vector2(479.999, 270)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_q21lu")
 
 [node name="tables" type="Node" parent="."]
 
-[node name="table1" parent="tables" instance=ExtResource("3_dxibd")]
-position = Vector2(643, 301)
+[node name="table" parent="tables" instance=ExtResource("3_dxibd")]
+position = Vector2(549, 313)
 
-[node name="table2" parent="tables" instance=ExtResource("3_dxibd")]
-position = Vector2(477, 409)
+[node name="PatronPosition1" parent="tables/table" index="2"]
+position = Vector2(93, -49)
+scale = Vector2(-2.2, 2.2)
 
-[node name="Table" parent="tables/table2" index="0"]
-z_index = -40
-
-[node name="TableHighlight" parent="tables/table2" index="1"]
-z_index = -40
-
-[node name="Label" parent="tables/table2" index="2"]
-text = "2"
-
-[node name="table3" parent="tables" instance=ExtResource("3_dxibd")]
-position = Vector2(763, 442)
-
-[node name="Table" parent="tables/table3" index="0"]
-z_index = -30
-
-[node name="TableHighlight" parent="tables/table3" index="1"]
-z_index = -30
-
-[node name="Label" parent="tables/table3" index="2"]
-text = "3"
+[node name="PatronPosition2" parent="tables/table" index="3"]
+position = Vector2(-89, -49)
+scale = Vector2(2.2, 2.2)
 
 [node name="PatronSpawn" type="Node2D" parent="."]
 position = Vector2(62, 507)
@@ -84,6 +68,5 @@ offset_bottom = 13.0
 value = 100.0
 show_percentage = false
 
-[editable path="tables/table2"]
-[editable path="tables/table3"]
+[editable path="tables/table"]
 [editable path="PatronInfo"]
