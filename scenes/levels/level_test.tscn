@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfap2j2to0g7m"]
+
+[ext_resource type="Script" path="res://scripts/level_test.gd" id="1_6twdo"]
+[ext_resource type="Texture2D" uid="uid://tgmgbpc6afsb" path="res://images/bar.png" id="2_0m166"]
+[ext_resource type="PackedScene" uid="uid://ddshbf5is1qw0" path="res://scenes/table.tscn" id="3_yfafb"]
+[ext_resource type="Script" path="res://scripts/stats_label.gd" id="4_eappc"]
+[ext_resource type="Script" path="res://scripts/stats_tracker.gd" id="5_rum17"]
+[ext_resource type="PackedScene" uid="uid://dqyh0d4yaetbx" path="res://scenes/patron_history.tscn" id="6_sy6hx"]
+
+[node name="LevelTest" type="Node2D"]
+script = ExtResource("1_6twdo")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(576, 324)
+texture = ExtResource("2_0m166")
+
+[node name="tables" type="Node" parent="."]
+
+[node name="table1" parent="tables" instance=ExtResource("3_yfafb")]
+position = Vector2(885, 380)
+
+[node name="table2" parent="tables" instance=ExtResource("3_yfafb")]
+position = Vector2(527, 472)
+
+[node name="Table" parent="tables/table2" index="0"]
+z_index = -40
+
+[node name="Label" parent="tables/table2/Table" index="0"]
+text = "2"
+
+[node name="table3" parent="tables" instance=ExtResource("3_yfafb")]
+position = Vector2(764, 548)
+
+[node name="Table" parent="tables/table3" index="0"]
+z_index = -30
+
+[node name="Label" parent="tables/table3/Table" index="0"]
+text = "3"
+
+[node name="PatronSpawn" type="Node2D" parent="."]
+position = Vector2(77, 624)
+
+[node name="StatsLabel" type="Label" parent="PatronSpawn"]
+z_index = 50
+offset_left = 190.0
+offset_top = -97.0
+offset_right = 276.0
+offset_bottom = -48.0
+script = ExtResource("4_eappc")
+
+[node name="StatsTracker" type="Node" parent="."]
+script = ExtResource("5_rum17")
+
+[node name="PatronHistory" parent="." instance=ExtResource("6_sy6hx")]
+visible = false
+z_index = 50
+position = Vector2(1012, 254)
+
+[editable path="tables/table2"]
+[editable path="tables/table3"]
+[editable path="PatronHistory"]

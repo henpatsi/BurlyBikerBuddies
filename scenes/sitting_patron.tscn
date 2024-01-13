@@ -1,16 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://de5p13olsx1vs"]
 
-[ext_resource type="Texture2D" uid="uid://dhx6s2xlinobu" path="res://icon.svg" id="1_jubct"]
 [ext_resource type="Script" path="res://scripts/sitting_patron.gd" id="1_mdcq2"]
+[ext_resource type="Texture2D" uid="uid://dndvnsyuk8lx5" path="res://images/characters/Side_Short_Neutral_OriginalSize.png" id="2_de4bm"]
 
 [node name="sitting_patron" type="Node2D"]
-z_index = 50
 script = ExtResource("1_mdcq2")
 
-[node name="body" type="Sprite2D" parent="."]
-texture = ExtResource("1_jubct")
-
-[node name="head" type="Sprite2D" parent="body"]
-position = Vector2(0, -100)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_jubct")
+[node name="SideShortNeutralOriginalSize" type="Sprite2D" parent="."]
+texture = ExtResource("2_de4bm")

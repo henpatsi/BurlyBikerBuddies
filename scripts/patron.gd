@@ -9,7 +9,7 @@ var stats_tacker
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	stats_tacker = get_node("/root/LevelTest/PatronSpawn/StatsTracker")
+	stats_tacker = get_node("/root/LevelTest/StatsTracker")
 	set_random_stats()
 	stats_label = get_node("/root/LevelTest/PatronSpawn/StatsLabel")
 	stats_label.show_stats(stats)
@@ -17,13 +17,13 @@ func _ready():
 func set_random_stats():
 	stats["name"] = stats_tacker.generate_name()
 	stats["age"] = rng.randi_range(30, 70)
-	stats["target_age_min"] = rng.randi_range(30, 50)
-	stats["target_age_max"] = rng.randi_range(stats["target_age_min"], 70)
-	print("Patron spawned with stats:")
-	print("Name" + stats["name"])
-	print("Age: " + str(stats["age"]))
-	print("Target age: " + str(stats["target_age_min"]) \
-			+ " - " + str(stats["target_age_max"]))
+	#stats["target_age_min"] = rng.randi_range(30, 50)
+	#stats["target_age_max"] = rng.randi_range(stats["target_age_min"], 70)
+	#print("Patron spawned with stats:")
+	#print("Name" + stats["name"])
+	#print("Age: " + str(stats["age"]))
+	#print("Target age: " + str(stats["target_age_min"]) \
+			#+ " - " + str(stats["target_age_max"]))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -51,7 +51,7 @@ func put_patron_to_table():
 	sitting_patron.set_stats(stats, table)
 	table.add_child(sitting_patron)
 	table.add_patron(sitting_patron)
-	sitting_patron.apply_table_offset()
+	sitting_patron.fit_to_table()
 	stats_label.hide()
 	stats_tacker.add_patron(sitting_patron)
 	queue_free()

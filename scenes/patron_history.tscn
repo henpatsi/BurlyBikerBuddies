@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqyh0d4yaetbx"]
+
+[ext_resource type="Texture2D" uid="uid://dfx0jdmljrtt8" path="res://images/history_background.png" id="1_77lfb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xxioo"]
+line_spacing = 5.0
+font_color = Color(0, 0, 0, 1)
+
+[node name="PatronHistory" type="Node2D"]
+z_index = 100
+
+[node name="PatronHistoryLabel" type="Label" parent="."]
+z_index = 100
+offset_left = -98.0
+offset_top = -219.0
+offset_right = 98.0
+offset_bottom = 215.0
+label_settings = SubResource("LabelSettings_xxioo")
+autowrap_mode = 1
+
+[node name="PatronHistoryBackground" type="Sprite2D" parent="."]
+z_index = 50
+texture = ExtResource("1_77lfb")
