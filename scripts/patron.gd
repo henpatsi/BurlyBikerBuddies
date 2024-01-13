@@ -4,6 +4,7 @@ var table = null
 
 var stats_label = null
 var stats = {}
+var patron_spawn
 var stats_tacker
 
 var level
@@ -12,8 +13,10 @@ func _ready():
 	level = get_node("/root/Level")
 	stats_tacker = get_node("/root/Level/PatronInfo")
 	set_random_stats()
+	patron_spawn = get_node("/root/Level/PatronSpawn")
 	stats_label = get_node("/root/Level/PatronSpawn/StatsLabel")
-	stats_label.show_stats(stats)
+	stats_label.write_stats(stats)
+	patron_spawn.show()
 
 func set_random_stats():
 	stats["name"] = stats_tacker.generate_name()
@@ -43,5 +46,5 @@ func put_patron_to_table():
 	table.add_child(sitting_patron)
 	table.add_patron(sitting_patron)
 	sitting_patron.fit_to_table()
-	stats_label.hide()
+	patron_spawn.hide()
 	queue_free()

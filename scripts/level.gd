@@ -2,7 +2,7 @@ extends Node2D
 
 var end_menu_path = "res://scenes/levels/end_menu.tscn"
 
-var level_duration = 30
+var level_duration = 120
 var level_timer = level_duration
 var level_time_bar
 

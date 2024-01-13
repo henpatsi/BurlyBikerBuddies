@@ -33,16 +33,34 @@ func remove_patrons():
 	
 func check_patron_match():
 	points = 1
-	print("Match points: " + str(points))
-	
+	var p1_likes = patron1.get_stats()["likes"]
+	var p2_likes = patron2.get_stats()["likes"]
+	var p1_dislikes = patron1.get_stats()["dislikes"]
+	var p2_dislikes = patron2.get_stats()["dislikes"]
+	for like in p1_likes:
+		if like in p2_likes:
+			points += 3
+		elif like in p2_dislikes:
+			points -= 3
+	for like in p2_likes:
+		if like in p1_dislikes:
+			points -= 3
+	for dislike in p1_dislikes:
+		if dislike in p2_dislikes:
+			points += 3
+
+func calculate_points(match, amount):
+	var change = amount if match else -amount
+	points += change
+
 func resolve_relationship():
 	await get_tree().create_timer(discussion_time).timeout
-	if points < 10 and points > 0:
-		relationship_icon = get_node("RelationshipIcons/ok")
-	if points > 10:
-		relationship_icon = get_node("RelationshipIcons/great")
 	if points <= 0:
 		relationship_icon = get_node("RelationshipIcons/bad")
+	if points > 0 and points < 6:
+		relationship_icon = get_node("RelationshipIcons/ok")
+	if points > 6:
+		relationship_icon = get_node("RelationshipIcons/great")
 	wait_hide_icon()
 	await get_tree().create_timer(icon_show_time).timeout
 	remove_patrons()
@@ -54,10 +72,6 @@ func wait_hide_icon():
 	await get_tree().create_timer(icon_show_time).timeout
 	relationship_icon.hide()
 	relationship_icon.stop()
-
-func calculate_points(match, amount):
-	var change = amount if match else -amount
-	points += change
 
 func is_full():
 	if (patron1 == null or patron2 == null):

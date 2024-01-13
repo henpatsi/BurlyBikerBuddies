@@ -20,7 +20,6 @@ func load_files():
 	var name_file = FileAccess.open("res://stat_files/names.txt", FileAccess.READ)
 	var name_content = name_file.get_as_text().trim_suffix("\n")
 	names = name_content.split("\n")
-	
 	load_preference_file("res://stat_files/likes.txt", likes)
 	load_preference_file("res://stat_files/dislikes.txt", dislikes)
 		

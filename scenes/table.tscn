@@ -86,7 +86,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_661n6"]
-radius = 46.0
+radius = 27.0
 height = 154.0
 
 [node name="table" type="Area2D"]

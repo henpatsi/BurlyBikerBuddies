@@ -1,6 +1,6 @@
 extends Label
 
-func show_stats(stats):
+func write_stats(stats):
 	self.text = ""
 	self.text += "Name: " + str(stats["name"]) 
 	self.text += "\nAge: " + str(stats["age"])
@@ -9,4 +9,3 @@ func show_stats(stats):
 		self.text += stats["likes"][topic]+ "\n"
 	for topic in stats["dislikes"].keys():
 		self.text += stats["dislikes"][topic] + "\n"
-	self.show()
