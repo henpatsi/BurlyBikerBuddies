@@ -4,7 +4,6 @@ var patron1 = null
 var patron2 = null
 
 var relationship_icon
-var showing_icon = false
 var icon_show_time = 2
 var discussion_time = 5
 var points = 0
@@ -41,18 +40,21 @@ func check_patron_match():
 	
 func resolve_relationship():
 	await get_tree().create_timer(discussion_time).timeout
-	if points >= 0:
-		relationship_icon = get_node("RelationshipIcons/heart")
+	if points < 10 and points > -10:
+		relationship_icon = get_node("RelationshipIcons/ok")
+	if points > 10:
+		relationship_icon = get_node("RelationshipIcons/great")
+	if points < -10:
+		relationship_icon = get_node("RelationshipIcons/bad")
 	wait_hide_icon()
 	await get_tree().create_timer(icon_show_time).timeout
 	remove_patrons()
 	
 func wait_hide_icon():
 	relationship_icon.show()
-	showing_icon = true
+	relationship_icon.play("default")
 	await get_tree().create_timer(icon_show_time).timeout
 	relationship_icon.hide()
-	showing_icon = false
 
 func get_points(match, amount):
 	var change = amount if match else -amount
