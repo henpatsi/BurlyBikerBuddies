@@ -3,6 +3,7 @@ extends Node
 var name_index = 0
 var names = ["Dirtbike", "Whisky", "Bullet", "Killer", "Rust", "Bicep", "Chainsaw", "Harry", "Shotgun"]
 
+var max_size
 var current_patrons = []
 var patron_history
 var history_label
@@ -25,13 +26,15 @@ func get_input():
 			history_visible = false
 
 func add_patron(sitting_patron):
-	if (current_patrons.size() == 4):
+	if (current_patrons.size() == max_size):
 		current_patrons.pop_back()
 	current_patrons.push_front(sitting_patron)
-	
+
 func show_current_patrons():
 	history_label.text = ""
 	for patron in current_patrons:
+		if patron == null:
+			continue
 		history_label.text += patron.get_stats()["name"]
 		history_label.text += "\n" + str(patron.get_stats()["age"])
 		history_label.text += "\n" + patron.get_stats()["table"].name

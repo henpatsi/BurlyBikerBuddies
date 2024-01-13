@@ -7,7 +7,6 @@ var rng = RandomNumberGenerator.new()
 var stats = {}
 var stats_tacker
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	stats_tacker = get_node("/root/LevelTest/StatsTracker")
 	set_random_stats()
@@ -17,15 +16,7 @@ func _ready():
 func set_random_stats():
 	stats["name"] = stats_tacker.generate_name()
 	stats["age"] = rng.randi_range(30, 70)
-	#stats["target_age_min"] = rng.randi_range(30, 50)
-	#stats["target_age_max"] = rng.randi_range(stats["target_age_min"], 70)
-	#print("Patron spawned with stats:")
-	#print("Name" + stats["name"])
-	#print("Age: " + str(stats["age"]))
-	#print("Target age: " + str(stats["target_age_min"]) \
-			#+ " - " + str(stats["target_age_max"]))
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	get_input()
 	put_patron_to_table()

@@ -5,11 +5,9 @@ var time_between_patrons = 2
 
 var patron_spawn
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	patron_spawn = get_node("PatronSpawn")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	handle_patrons(delta)
 
