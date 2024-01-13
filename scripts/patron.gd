@@ -18,6 +18,8 @@ func _ready():
 func set_random_stats():
 	stats["name"] = stats_tacker.generate_name()
 	stats["age"] = stats_tacker.generate_age()
+	stats["likes"] = stats_tacker.generate_likes()
+	stats["dislikes"] = stats_tacker.generate_dislikes(stats["likes"])
 
 func _process(delta):
 	get_input()
