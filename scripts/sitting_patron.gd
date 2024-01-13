@@ -5,6 +5,10 @@ var patron_offset_y = 20
 var patron_scale = 2
 
 var stats
+var stats_tracker
+
+func _ready():
+	stats_tracker = get_node("/root/Level/PatronInfo/")
 
 func fit_to_table():
 	apply_offset()
@@ -27,7 +31,7 @@ func flip_sprite():
 		self.scale.x = -self.scale.x
 
 func set_ordering():
-	var table_sprite = get_node("/root/LevelTest/tables/" + stats["table"].name + "/Table")
+	var table_sprite = get_node("/root/Level/tables/" + stats["table"].name + "/Table")
 	self.z_index = table_sprite.z_index + 1
 	
 func set_stats(stats, table):
@@ -36,3 +40,9 @@ func set_stats(stats, table):
 	
 func get_stats():
 	return stats
+
+func _on_mouse_entered():
+	stats_tracker.show_patron_stats(self)
+
+func _on_mouse_exited():
+	stats_tracker.hide_patron_stats()

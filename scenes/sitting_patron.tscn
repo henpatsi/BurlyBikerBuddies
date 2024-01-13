@@ -1,10 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://de5p13olsx1vs"]
+[gd_scene load_steps=4 format=3 uid="uid://de5p13olsx1vs"]
 
 [ext_resource type="Script" path="res://scripts/sitting_patron.gd" id="1_mdcq2"]
 [ext_resource type="Texture2D" uid="uid://dndvnsyuk8lx5" path="res://images/characters/Side_Short_Neutral_OriginalSize.png" id="2_de4bm"]
 
-[node name="sitting_patron" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_spq47"]
+radius = 17.0
+
+[node name="sitting_patron" type="Area2D"]
 script = ExtResource("1_mdcq2")
 
 [node name="SideShortNeutralOriginalSize" type="Sprite2D" parent="."]
 texture = ExtResource("2_de4bm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, -17)
+shape = SubResource("CircleShape2D_spq47")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

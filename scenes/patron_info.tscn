@@ -6,18 +6,19 @@
 line_spacing = 5.0
 font_color = Color(0, 0, 0, 1)
 
-[node name="PatronHistory" type="Node2D"]
+[node name="PatronInfo" type="Node2D"]
 z_index = 100
 
-[node name="PatronHistoryLabel" type="Label" parent="."]
+[node name="PatronInfoLabel" type="Label" parent="."]
 z_index = 100
 offset_left = -98.0
-offset_top = -219.0
+offset_top = -74.0
 offset_right = 98.0
-offset_bottom = 215.0
+offset_bottom = 70.0
 label_settings = SubResource("LabelSettings_xxioo")
 autowrap_mode = 1
 
-[node name="PatronHistoryBackground" type="Sprite2D" parent="."]
+[node name="PatronInfoBackground" type="Sprite2D" parent="."]
 z_index = 50
+scale = Vector2(1, 0.38055)
 texture = ExtResource("1_77lfb")

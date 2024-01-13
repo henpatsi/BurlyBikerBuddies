@@ -1,0 +1,87 @@
+[gd_scene load_steps=9 format=3 uid="uid://dfap2j2to0g7m"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_twgjg"]
+[ext_resource type="Texture2D" uid="uid://tgmgbpc6afsb" path="res://images/bar.png" id="2_q21lu"]
+[ext_resource type="PackedScene" uid="uid://ddshbf5is1qw0" path="res://scenes/table.tscn" id="3_dxibd"]
+[ext_resource type="Script" path="res://scripts/spawn_stats_label.gd" id="4_n6gf5"]
+[ext_resource type="PackedScene" uid="uid://dqyh0d4yaetbx" path="res://scenes/patron_info.tscn" id="5_nimfu"]
+[ext_resource type="Script" path="res://scripts/stats_tracker.gd" id="6_f8xyf"]
+[ext_resource type="Script" path="res://scripts/patron_info_label.gd" id="7_6esmp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qwdqr"]
+font_size = 20
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_twgjg")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(576, 324)
+texture = ExtResource("2_q21lu")
+
+[node name="tables" type="Node" parent="."]
+
+[node name="table1" parent="tables" instance=ExtResource("3_dxibd")]
+position = Vector2(885, 380)
+
+[node name="table2" parent="tables" instance=ExtResource("3_dxibd")]
+position = Vector2(527, 472)
+
+[node name="Table" parent="tables/table2" index="0"]
+z_index = -40
+
+[node name="TableHighlight" parent="tables/table2" index="1"]
+z_index = -40
+
+[node name="Label" parent="tables/table2" index="2"]
+text = "2"
+
+[node name="table3" parent="tables" instance=ExtResource("3_dxibd")]
+position = Vector2(764, 548)
+
+[node name="Table" parent="tables/table3" index="0"]
+z_index = -30
+
+[node name="TableHighlight" parent="tables/table3" index="1"]
+z_index = -30
+
+[node name="Label" parent="tables/table3" index="2"]
+text = "3"
+
+[node name="PatronSpawn" type="Node2D" parent="."]
+position = Vector2(77, 624)
+
+[node name="StatsLabel" type="Label" parent="PatronSpawn"]
+z_index = 50
+offset_left = 190.0
+offset_top = -97.0
+offset_right = 276.0
+offset_bottom = -48.0
+script = ExtResource("4_n6gf5")
+
+[node name="PatronInfo" parent="." instance=ExtResource("5_nimfu")]
+visible = false
+z_index = 50
+position = Vector2(130, 103)
+script = ExtResource("6_f8xyf")
+
+[node name="PatronInfoLabel" parent="PatronInfo" index="0"]
+script = ExtResource("7_6esmp")
+
+[node name="MoneyLabel" type="Label" parent="."]
+offset_left = 955.0
+offset_top = 44.0
+offset_right = 1060.0
+offset_bottom = 72.0
+text = "Money: 0 $"
+label_settings = SubResource("LabelSettings_qwdqr")
+
+[node name="LevelTimeBar" type="ProgressBar" parent="."]
+offset_right = 1152.0
+offset_bottom = 13.0
+value = 100.0
+show_percentage = false
+
+[editable path="tables/table2"]
+[editable path="tables/table3"]
+[editable path="PatronInfo"]

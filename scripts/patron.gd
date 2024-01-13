@@ -3,19 +3,21 @@ extends Node2D
 var table = null
 
 var stats_label = null
-var rng = RandomNumberGenerator.new()
 var stats = {}
 var stats_tacker
 
+var level
+
 func _ready():
-	stats_tacker = get_node("/root/LevelTest/StatsTracker")
+	level = get_node("/root/Level")
+	stats_tacker = get_node("/root/Level/PatronInfo")
 	set_random_stats()
-	stats_label = get_node("/root/LevelTest/PatronSpawn/StatsLabel")
+	stats_label = get_node("/root/Level/PatronSpawn/StatsLabel")
 	stats_label.show_stats(stats)
 
 func set_random_stats():
 	stats["name"] = stats_tacker.generate_name()
-	stats["age"] = rng.randi_range(30, 70)
+	stats["age"] = stats_tacker.generate_age()
 
 func _process(delta):
 	get_input()
@@ -23,11 +25,13 @@ func _process(delta):
 	
 func get_input():
 	if (Input.is_action_just_pressed("select_table1")):
-		table = get_node("/root/LevelTest/tables/table1")
+		table = get_node("/root/Level/tables/table1")
 	if (Input.is_action_just_pressed("select_table2")):
-		table = get_node("/root/LevelTest/tables/table2")
+		table = get_node("/root/Level/tables/table2")
 	if (Input.is_action_just_pressed("select_table3")):
-		table = get_node("/root/LevelTest/tables/table3")
+		table = get_node("/root/Level/tables/table3")
+	if (Input.is_action_just_pressed("select_table")):
+		table = level.get_target_table()
 	
 func put_patron_to_table():
 	if (table == null):
@@ -44,5 +48,4 @@ func put_patron_to_table():
 	table.add_patron(sitting_patron)
 	sitting_patron.fit_to_table()
 	stats_label.hide()
-	stats_tacker.add_patron(sitting_patron)
 	queue_free()

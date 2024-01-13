@@ -1,48 +1,25 @@
 extends Node
 
-var name_index = 0
+var rng = RandomNumberGenerator.new()
 var names = ["Dirtbike", "Whisky", "Bullet", "Killer", "Rust", "Bicep", "Chainsaw", "Harry", "Shotgun"]
 
-var max_size
-var current_patrons = []
-var patron_history
-var history_label
-var history_visible = false
+var patron_info
+var patron_info_label
 
 func _ready():
-	patron_history = get_node("/root/LevelTest/PatronHistory")
-	history_label = patron_history.get_child(0)
-	patron_history.hide()
+	patron_info = get_node("/root/Level/PatronInfo")
+	patron_info_label = patron_info.get_child(0)
+	patron_info.hide()
 
-func _process(delta):
-	get_input()
+func show_patron_stats(patron):
+	patron_info_label.write_patron_stats(patron.get_stats())
+	patron_info.show()
 
-func get_input():
-	if (Input.is_action_just_pressed("show_current_patrons")):
-		if (!history_visible):
-			show_current_patrons()
-		else:
-			patron_history.hide()
-			history_visible = false
-
-func add_patron(sitting_patron):
-	if (current_patrons.size() == max_size):
-		current_patrons.pop_back()
-	current_patrons.push_front(sitting_patron)
-
-func show_current_patrons():
-	history_label.text = ""
-	for patron in current_patrons:
-		if patron == null:
-			continue
-		history_label.text += patron.get_stats()["name"]
-		history_label.text += "\n" + str(patron.get_stats()["age"])
-		history_label.text += "\n" + patron.get_stats()["table"].name
-		history_label.text += "\n\n"
-	patron_history.show()
-	history_visible = true
+func hide_patron_stats():
+	patron_info.hide()
 
 func generate_name():
-	var name = names[name_index]
-	name_index += 1
-	return name
+	return names[rng.randi_range(0, names.size() - 1)]
+	
+func generate_age():
+	return (rng.randi_range(30, 70))
