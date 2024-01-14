@@ -4,11 +4,13 @@
 
 Our submission to the New Year New Skills Game Jam 2024!
 
-Programmer and designer: Henri Pätsi
+#### Credits:
 
-Artist and designer: Anton Pätsi
+- Programmer and designer: Henri Pätsi
+
+- Artist and designer: Anton Pätsi
  
-Premade assets:
+#### Premade assets:
 
  - relationship icons: https://pipoya.itch.io/free-popup-emotes-pack
 
