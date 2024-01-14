@@ -8,6 +8,7 @@ var topics
 
 var patron_info
 var patron_info_label
+var showing_patron = null
 
 func _ready():
 	patron_info = get_node("/root/Level/PatronInfo")
@@ -32,12 +33,18 @@ func load_preference_file(file_path, target_dict):
 		var long = split[1].split("\n", false)
 		target_dict[split[0]] = long
 
+func _process(delta):
+	if (showing_patron == null):
+		patron_info.hide()
+
 func show_patron_stats(patron):
 	patron_info_label.write_patron_stats(patron.get_stats())
 	patron_info.show()
+	showing_patron = patron
 
 func hide_patron_stats():
 	patron_info.hide()
+	showing_patron = null
 
 func generate_name():
 	return names[rng.randi_range(0, names.size() - 1)]
