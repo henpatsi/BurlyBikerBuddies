@@ -9,7 +9,6 @@ func _ready():
 	money_label.text = "You made " + str(global.money) + " $"
 
 func _on_restart_button_pressed():
-	print("Restarting game")
 	get_tree().change_scene_to_file(level_scene)
 
 func _on_exit_button_pressed():

@@ -8,19 +8,20 @@ font_size = 14
 font_color = Color(0, 0, 0, 1)
 
 [node name="PatronSpawn" type="Node2D"]
+z_index = 10
 
 [node name="StatsLabelBackground" type="Sprite2D" parent="."]
-z_index = 40
-position = Vector2(225.5, -40.625)
+z_index = 10
+position = Vector2(374.5, 446.375)
 scale = Vector2(1.22511, 0.34408)
 texture = ExtResource("2_nngyk")
 
 [node name="StatsLabel" type="Label" parent="."]
-z_index = 50
-offset_left = 86.0
-offset_top = -119.0
-offset_right = 364.0
-offset_bottom = 37.0
+z_index = 15
+offset_left = 235.0
+offset_top = 368.0
+offset_right = 513.0
+offset_bottom = 524.0
 text = "Name: BOB
 Age: 100
 Sentence 1

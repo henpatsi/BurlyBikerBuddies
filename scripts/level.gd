@@ -41,7 +41,6 @@ func handle_patrons(delta):
 	instantiate_new_patron()
 
 func instantiate_new_patron():
-	print("Instantiating new patron")
 	var scn = load("res://scenes/patron.tscn")
 	var new_patron = scn.instantiate()
 	patron_spawn.add_child(new_patron)
@@ -53,7 +52,6 @@ func add_money(amount):
 	money_label.text += str(global.get_money()) + " $"
 
 func end_level():
-	print("Ending level")
 	get_tree().change_scene_to_file(end_menu_path)
 
 func get_target_table():

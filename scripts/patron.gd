@@ -39,7 +39,6 @@ func put_patron_to_table():
 		table = null
 		return
 	
-	print("Putting patron to " + table.name)
 	var scn = load("res://scenes/sitting_patron.tscn")
 	var sitting_patron = scn.instantiate()
 	sitting_patron.set_stats(stats, table)

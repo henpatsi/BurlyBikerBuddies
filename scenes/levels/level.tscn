@@ -135,7 +135,7 @@ scale = Vector2(1.8, 1.8)
 
 [node name="PatronSpawn" parent="." instance=ExtResource("4_4umbx")]
 visible = false
-position = Vector2(90, 481)
+z_index = 0
 
 [node name="PatronInfo" parent="." instance=ExtResource("5_nimfu")]
 visible = false
