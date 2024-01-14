@@ -10,7 +10,7 @@ Artist and designer: Anton Pätsi
  
 Premade assets:
 
-	relationship icons: https://pipoya.itch.io/free-popup-emotes-pack
+ - relationship icons: https://pipoya.itch.io/free-popup-emotes-pack
 
 
 
