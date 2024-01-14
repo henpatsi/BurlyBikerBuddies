@@ -1,69 +1,101 @@
-[gd_scene load_steps=3 format=3 uid="uid://gspetkbgj62t"]
+[gd_scene load_steps=6 format=3 uid="uid://gspetkbgj62t"]
 
 [ext_resource type="Script" path="res://scripts/end_menu.gd" id="1_ukelk"]
+[ext_resource type="Texture2D" uid="uid://bfbyrf4ffvjjr" path="res://images/Menu Screen.png" id="2_gh7jo"]
+[ext_resource type="Texture2D" uid="uid://grjii0m003fk" path="res://images/IncomerDescription.png" id="3_hbpnr"]
+[ext_resource type="FontFile" uid="uid://eygcldwhvkok" path="res://fonts/lunchds.ttf" id="3_kx5ju"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lthof"]
-font_size = 50
+font = ExtResource("3_kx5ju")
+font_size = 30
+font_color = Color(0.968627, 0.937255, 0.780392, 1)
 
 [node name="EndMenu" type="Node"]
 script = ExtResource("1_ukelk")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 400
-theme_override_constants/margin_top = 80
-theme_override_constants/margin_right = 400
-theme_override_constants/margin_bottom = 80
+[node name="MenuScreen" type="Sprite2D" parent="."]
+position = Vector2(480, 270)
+scale = Vector2(3, 3)
+texture = ExtResource("2_gh7jo")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
+[node name="Buttons" type="Node" parent="."]
+
+[node name="StartButton" type="TextureButton" parent="Buttons"]
+offset_left = 581.0
+offset_top = 276.0
+offset_right = 724.0
+offset_bottom = 316.0
+
+[node name="ExitButton" type="TextureButton" parent="Buttons"]
+offset_left = 585.0
+offset_top = 351.0
+offset_right = 691.0
+offset_bottom = 391.0
+
+[node name="InstructionButton" type="TextureButton" parent="Buttons"]
+offset_left = 576.0
+offset_top = 147.0
+offset_right = 682.0
+offset_bottom = 191.0
+
+[node name="Stats" type="VBoxContainer" parent="."]
+offset_left = 17.0
+offset_top = 337.0
+offset_right = 283.0
+offset_bottom = 519.0
 size_flags_vertical = 4
 theme_override_constants/separation = 50
 
-[node name="ScoreLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="ScoreLabel" type="Label" parent="Stats"]
 layout_mode = 2
 text = "Earned 1000 $"
 label_settings = SubResource("LabelSettings_lthof")
-horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Stats"]
 layout_mode = 2
 
-[node name="FriendshipsLabel" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="FriendshipsLabel" type="Label" parent="Stats/VBoxContainer"]
 layout_mode = 2
 text = "Buds: 10"
 label_settings = SubResource("LabelSettings_lthof")
-horizontal_alignment = 1
 
-[node name="LoversLabel" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="LoversLabel" type="Label" parent="Stats/VBoxContainer"]
 layout_mode = 2
 text = "Best Buds: 10"
 label_settings = SubResource("LabelSettings_lthof")
-horizontal_alignment = 1
 
-[node name="EnemiesLabel" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="EnemiesLabel" type="Label" parent="Stats/VBoxContainer"]
 layout_mode = 2
 text = "Enemies: 10"
 label_settings = SubResource("LabelSettings_lthof")
-horizontal_alignment = 1
-
-[node name="BoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 30
-
-[node name="RestartButton" type="Button" parent="MarginContainer/VBoxContainer/BoxContainer"]
-layout_mode = 2
-text = "Next day"
-
-[node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer/BoxContainer"]
-layout_mode = 2
-text = "Exit"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/BoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/BoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[node name="Instructions" type="Node2D" parent="."]
+position = Vector2(184, 280)
+
+[node name="Sprite2D" type="Sprite2D" parent="Instructions"]
+position = Vector2(121, -316)
+scale = Vector2(2.83125, 5.88889)
+texture = ExtResource("3_hbpnr")
+
+[node name="InstructionText" type="RichTextLabel" parent="Instructions"]
+z_index = 5
+offset_left = -113.0
+offset_top = -127.0
+offset_right = 139.0
+offset_bottom = 128.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_kx5ju")
+theme_override_font_sizes/normal_font_size = 18
+text = "Seat bikers by clicking on tables, the bench, or the stools.
+
+Try to match their likes and dislikes to form long lasting friendships.
+
+You can hover over the seated guests' heads to check their preference sheet."
+fit_content = true
+
+[connection signal="pressed" from="Buttons/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Buttons/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="mouse_entered" from="Buttons/InstructionButton" to="." method="_on_instruction_button_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/InstructionButton" to="." method="_on_instruction_button_mouse_exited"]
