@@ -8,7 +8,7 @@ var dialogue_player
 
 var sfx_dir = "res://audio/sfx/"
 var door_sfxs = ["SFX_DoorOpen1.wav", "SFX_DoorOpen2.wav"]
-var sit_sfxs = ["SFX_Sit1.wav", "SFX_Sit2.wav"]
+var sit_sfxs = ["SFX_Sit3.wav", "SFX_Sit4.wav"]
 
 var dialogue_dir = "res://audio/dialogue/"
 var dialogue_sfxs = [""]

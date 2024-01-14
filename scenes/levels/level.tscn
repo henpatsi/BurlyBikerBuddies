@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://scripts/stats_tracker.gd" id="6_f8xyf"]
 [ext_resource type="Script" path="res://scripts/patron_info_label.gd" id="7_6esmp"]
 [ext_resource type="Script" path="res://scripts/audio.gd" id="8_5i7w8"]
-[ext_resource type="AudioStream" uid="uid://ui623u4kule" path="res://audio/music/ES_Miles & Miles - Will Harrison.wav" id="8_58atd"]
+[ext_resource type="AudioStream" uid="uid://cfttus5csl4fr" path="res://audio/music/SFX_Music&Ambience2.wav" id="9_hifen"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_os8p8"]
 radius = 53.0
@@ -167,8 +167,7 @@ show_percentage = false
 script = ExtResource("8_5i7w8")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource("8_58atd")
-volume_db = -20.0
+stream = ExtResource("9_hifen")
 autoplay = true
 
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="Audio"]
