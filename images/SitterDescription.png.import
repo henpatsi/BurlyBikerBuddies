@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfx0jdmljrtt8"
-path="res://.godot/imported/history_background.png-ce27fef7889ae9ee6e5140c0a5534b44.ctex"
+uid="uid://d30431q36co1p"
+path="res://.godot/imported/SitterDescription.png-d71c66e744a91d319463450b88d618c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/history_background.png"
-dest_files=["res://.godot/imported/history_background.png-ce27fef7889ae9ee6e5140c0a5534b44.ctex"]
+source_file="res://images/SitterDescription.png"
+dest_files=["res://.godot/imported/SitterDescription.png-d71c66e744a91d319463450b88d618c0.ctex"]
 
 [params]
 

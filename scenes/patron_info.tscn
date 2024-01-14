@@ -1,24 +1,32 @@
 [gd_scene load_steps=3 format=3 uid="uid://dqyh0d4yaetbx"]
 
-[ext_resource type="Texture2D" uid="uid://dfx0jdmljrtt8" path="res://images/history_background.png" id="1_77lfb"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_xxioo"]
-line_spacing = 5.0
-font_color = Color(0, 0, 0, 1)
+[ext_resource type="Texture2D" uid="uid://d30431q36co1p" path="res://images/SitterDescription.png" id="1_d6ya1"]
+[ext_resource type="Script" path="res://scripts/patron_info_label.gd" id="2_yafwp"]
 
 [node name="PatronInfo" type="Node2D"]
 z_index = 100
 
-[node name="PatronInfoLabel" type="Label" parent="."]
-z_index = 100
-offset_left = -98.0
-offset_top = -78.0
-offset_right = 98.0
-offset_bottom = 78.0
-label_settings = SubResource("LabelSettings_xxioo")
-autowrap_mode = 1
-
 [node name="PatronInfoBackground" type="Sprite2D" parent="."]
-z_index = 50
-scale = Vector2(1, 0.40592)
-texture = ExtResource("1_77lfb")
+position = Vector2(480, 270)
+scale = Vector2(3, 3)
+texture = ExtResource("1_d6ya1")
+
+[node name="PatronInfoLabel" type="RichTextLabel" parent="."]
+z_index = 5
+offset_left = 47.0
+offset_top = 55.0
+offset_right = 198.0
+offset_bottom = 198.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 14
+theme_override_font_sizes/bold_font_size = 16
+bbcode_enabled = true
+text = "[b]Bobby[/b]
+
+Likes:
+Cats
+
+Hates:
+Sports"
+fit_content = true
+script = ExtResource("2_yafwp")

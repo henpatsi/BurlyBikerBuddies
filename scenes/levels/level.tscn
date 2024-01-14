@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dfap2j2to0g7m"]
+[gd_scene load_steps=15 format=3 uid="uid://dfap2j2to0g7m"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_twgjg"]
 [ext_resource type="Texture2D" uid="uid://tgmgbpc6afsb" path="res://images/bar.png" id="2_q21lu"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://b2h72hannpwp3" path="res://scenes/patron_spawn.tscn" id="4_4umbx"]
 [ext_resource type="PackedScene" uid="uid://dqyh0d4yaetbx" path="res://scenes/patron_info.tscn" id="5_nimfu"]
 [ext_resource type="Script" path="res://scripts/stats_tracker.gd" id="6_f8xyf"]
-[ext_resource type="Script" path="res://scripts/patron_info_label.gd" id="7_6esmp"]
 [ext_resource type="Script" path="res://scripts/audio.gd" id="8_5i7w8"]
 [ext_resource type="AudioStream" uid="uid://cfttus5csl4fr" path="res://audio/music/SFX_Music&Ambience2.wav" id="9_hifen"]
 
@@ -142,11 +141,7 @@ z_index = 0
 [node name="PatronInfo" parent="." instance=ExtResource("5_nimfu")]
 visible = false
 z_index = 50
-position = Vector2(128, 114)
 script = ExtResource("6_f8xyf")
-
-[node name="PatronInfoLabel" parent="PatronInfo" index="0"]
-script = ExtResource("7_6esmp")
 
 [node name="MoneyLabel" type="Label" parent="."]
 offset_left = 801.0

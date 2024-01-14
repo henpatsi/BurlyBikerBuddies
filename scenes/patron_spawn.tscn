@@ -1,32 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2h72hannpwp3"]
+[gd_scene load_steps=3 format=3 uid="uid://b2h72hannpwp3"]
 
 [ext_resource type="Script" path="res://scripts/spawn_stats_label.gd" id="1_m56pe"]
-[ext_resource type="Texture2D" uid="uid://dfx0jdmljrtt8" path="res://images/history_background.png" id="2_nngyk"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_jxfa3"]
-font_size = 14
-font_color = Color(0, 0, 0, 1)
+[ext_resource type="Texture2D" uid="uid://grjii0m003fk" path="res://images/IncomerDescription.png" id="1_qscsu"]
 
 [node name="PatronSpawn" type="Node2D"]
 z_index = 10
 
 [node name="StatsLabelBackground" type="Sprite2D" parent="."]
-z_index = 10
-position = Vector2(374.5, 446.375)
-scale = Vector2(1.22511, 0.34408)
-texture = ExtResource("2_nngyk")
+z_index = 5
+position = Vector2(480, 270)
+scale = Vector2(3, 3)
+texture = ExtResource("1_qscsu")
 
-[node name="StatsLabel" type="Label" parent="."]
-z_index = 15
-offset_left = 235.0
-offset_top = 368.0
-offset_right = 513.0
-offset_bottom = 524.0
-text = "Name: BOB
-Age: 100
-Sentence 1
-Sentence 2"
-label_settings = SubResource("LabelSettings_jxfa3")
-vertical_alignment = 1
-autowrap_mode = 3
+[node name="StatsLabel" type="RichTextLabel" parent="."]
+z_index = 10
+offset_left = 223.0
+offset_top = 369.0
+offset_right = 494.0
+offset_bottom = 498.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 14
+theme_override_font_sizes/bold_font_size = 16
+bbcode_enabled = true
+text = "[b]Bob[/b]
+
+I like cars
+
+I hate cats"
 script = ExtResource("1_m56pe")

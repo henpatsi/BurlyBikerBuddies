@@ -11,7 +11,7 @@ var patron_info_label
 
 func _ready():
 	patron_info = get_node("/root/Level/PatronInfo")
-	patron_info_label = patron_info.get_child(0)
+	patron_info_label = get_node("/root/Level/PatronInfo/PatronInfoLabel")
 	patron_info.hide()
 	load_files()
 	topics = likes.keys()
