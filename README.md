@@ -14,4 +14,3 @@ Our submission to the New Year New Skills Game Jam 2024!
 
  - relationship icons: https://pipoya.itch.io/free-popup-emotes-pack
  - font: codeman38 (https://www.dafont.com/lunchtime-doubly-so.font)
-

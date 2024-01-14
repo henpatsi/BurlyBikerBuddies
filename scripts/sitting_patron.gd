@@ -17,7 +17,7 @@ func fit_to_table():
 	set_ordering()
 
 func set_ordering():
-	self.z_index = stats["table"].z_index + 1
+	self.z_index = 0
 	
 func set_stats(stats, table):
 	self.stats = stats
