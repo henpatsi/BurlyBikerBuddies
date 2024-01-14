@@ -6,18 +6,21 @@ var stats_label = null
 var stats = {}
 var patron_spawn
 var stats_tacker
+var audio_player
 
 var level
 
 func _ready():
 	level = get_node("/root/Level")
 	stats_tacker = get_node("/root/Level/PatronInfo")
-	set_random_stats()
 	patron_spawn = get_node("/root/Level/PatronSpawn")
 	stats_label = get_node("/root/Level/PatronSpawn/StatsLabel")
+	audio_player = get_node("/root/Level/Audio")
+	set_random_stats()
 	stats_label.write_stats(stats)
 	patron_spawn.show()
-
+	audio_player.play_sfx("door")
+	
 func set_random_stats():
 	stats["name"] = stats_tacker.generate_name()
 	stats["age"] = stats_tacker.generate_age()
@@ -46,4 +49,5 @@ func put_patron_to_table():
 	table.add_patron(sitting_patron)
 	sitting_patron.fit_to_table()
 	patron_spawn.hide()
+	audio_player.play_sfx("sit")
 	queue_free()

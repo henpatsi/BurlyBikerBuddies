@@ -25,11 +25,11 @@ func load_files():
 		
 func load_preference_file(file_path, target_dict):
 	var file = FileAccess.open(file_path, FileAccess.READ)
-	var content = file.get_as_text().trim_suffix("\n")
-	var groups = content.split("\n\n")
+	var content = file.get_as_text()
+	var groups = content.split("\n\n", false)
 	for group in groups:
-		var split = group.split(":")
-		var long = split[1].trim_prefix("\n").split("\n")
+		var split = group.split(":", false)
+		var long = split[1].split("\n", false)
 		target_dict[split[0]] = long
 
 func show_patron_stats(patron):

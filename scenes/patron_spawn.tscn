@@ -29,5 +29,4 @@ Sentence 2"
 label_settings = SubResource("LabelSettings_jxfa3")
 vertical_alignment = 1
 autowrap_mode = 3
-text_overrun_behavior = 3
 script = ExtResource("1_m56pe")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dfap2j2to0g7m"]
+[gd_scene load_steps=16 format=3 uid="uid://dfap2j2to0g7m"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_twgjg"]
 [ext_resource type="Texture2D" uid="uid://tgmgbpc6afsb" path="res://images/bar.png" id="2_q21lu"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dqyh0d4yaetbx" path="res://scenes/patron_info.tscn" id="5_nimfu"]
 [ext_resource type="Script" path="res://scripts/stats_tracker.gd" id="6_f8xyf"]
 [ext_resource type="Script" path="res://scripts/patron_info_label.gd" id="7_6esmp"]
+[ext_resource type="Script" path="res://scripts/audio.gd" id="8_5i7w8"]
+[ext_resource type="AudioStream" uid="uid://ui623u4kule" path="res://audio/music/ES_Miles & Miles - Will Harrison.wav" id="8_58atd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_os8p8"]
 radius = 53.0
@@ -160,6 +162,18 @@ offset_right = 959.0
 offset_bottom = 13.0
 value = 100.0
 show_percentage = false
+
+[node name="Audio" type="Node" parent="."]
+script = ExtResource("8_5i7w8")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("8_58atd")
+volume_db = -20.0
+autoplay = true
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="Audio"]
+
+[node name="DialoguePlayer" type="AudioStreamPlayer" parent="Audio"]
 
 [editable path="tables/table"]
 [editable path="tables/table2"]
