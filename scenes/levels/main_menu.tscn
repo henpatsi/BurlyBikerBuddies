@@ -41,7 +41,7 @@ offset_bottom = 191.0
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="Instructions" type="Node2D" parent="."]
-position = Vector2(211, 283)
+position = Vector2(184, 280)
 
 [node name="Sprite2D" type="Sprite2D" parent="Instructions"]
 position = Vector2(121, -316)
