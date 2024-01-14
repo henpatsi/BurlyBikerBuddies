@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7xvolwbu4x5g"]
+[gd_scene load_steps=5 format=3 uid="uid://b7xvolwbu4x5g"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_iwrsj"]
 [ext_resource type="Texture2D" uid="uid://bfbyrf4ffvjjr" path="res://images/Menu Screen.png" id="2_cljbo"]
+[ext_resource type="Texture2D" uid="uid://bh7f7bqlmtnib" path="res://images/Title.png" id="3_ardw7"]
+[ext_resource type="Texture2D" uid="uid://grjii0m003fk" path="res://images/IncomerDescription.png" id="4_brssn"]
 
 [node name="MainMenu" type="Node"]
 script = ExtResource("1_iwrsj")
@@ -10,6 +12,11 @@ script = ExtResource("1_iwrsj")
 position = Vector2(480, 270)
 scale = Vector2(3, 3)
 texture = ExtResource("2_cljbo")
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(480, 270)
+scale = Vector2(3, 3)
+texture = ExtResource("3_ardw7")
 
 [node name="Buttons" type="Node" parent="."]
 
@@ -33,12 +40,20 @@ offset_bottom = 191.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
-[node name="InstructionText" type="RichTextLabel" parent="."]
-visible = false
-offset_left = 21.0
-offset_top = 338.0
-offset_right = 381.0
-offset_bottom = 522.0
+[node name="Instructions" type="Node2D" parent="."]
+position = Vector2(211, 283)
+
+[node name="Sprite2D" type="Sprite2D" parent="Instructions"]
+position = Vector2(121, -316)
+scale = Vector2(2.83125, 5.88889)
+texture = ExtResource("4_brssn")
+
+[node name="InstructionText" type="RichTextLabel" parent="Instructions"]
+offset_left = -116.0
+offset_top = -110.0
+offset_right = 136.0
+offset_bottom = 129.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Seat bikers by clicking on tables, the bench, or the stools.
 
 Try to match their likes and dislikes to form long lasting friendships.
