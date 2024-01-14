@@ -65,6 +65,7 @@ func resolve_relationship():
 	await get_tree().create_timer(icon_show_time).timeout
 	remove_patrons()
 	level.add_money(points * 100)
+	level.add_friend(points);
 	
 func wait_hide_icon():
 	relationship_icon.show()

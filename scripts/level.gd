@@ -15,7 +15,7 @@ var target_table = null
 var money_label
 
 func _ready():
-	global.set_money(0)
+	global.reset_all()
 	level_time_bar = get_node("LevelTimeBar")
 	money_label = get_node("MoneyLabel")
 	patron_spawn = get_node("PatronSpawn")
@@ -47,9 +47,17 @@ func instantiate_new_patron():
 	patron_spawn_timer = 0
 
 func add_money(amount):
-	global.add_money(amount)
+	global.money += amount
 	money_label.text = "Money: "
-	money_label.text += str(global.get_money()) + " $"
+	money_label.text += str(global.money) + " $"
+	
+func add_friend(points):
+	if points <= 0:
+		global.enemies += 1
+	if points > 0 and points < 6:
+		global.friends += 1
+	if points > 6:
+		global.best_friends += 1
 
 func end_level():
 	get_tree().change_scene_to_file(end_menu_path)
