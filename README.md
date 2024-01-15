@@ -4,6 +4,8 @@
 
 Our submission to the New Year New Skills Game Jam 2024 with the theme "Building Connections"!
 
+You can play the game on [itch.io](https://tupperwarefan.itch.io/burly-biker-buddies)
+
 #### Credits:
 
 - Programmer and designer: Henri Pätsi
