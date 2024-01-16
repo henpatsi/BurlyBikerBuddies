@@ -1,6 +1,4 @@
-# NewYearNewSkillsGameJam2024
-
-## Burly Biker Buddies
+# Burly Biker Buddies
 
 Our submission to the New Year New Skills Game Jam 2024 with the theme "Building Connections"!
 
