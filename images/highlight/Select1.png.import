@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5rwc8t18nb8k"
-path="res://.godot/imported/Patio.png-3df15b792339b808b3a217231d102ce0.ctex"
+uid="uid://peixweug3c0g"
+path="res://.godot/imported/Select1.png-633302a71a8df77fca4d176066479a3f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/Patio.png"
-dest_files=["res://.godot/imported/Patio.png-3df15b792339b808b3a217231d102ce0.ctex"]
+source_file="res://images/highlight/Select1.png"
+dest_files=["res://.godot/imported/Select1.png-633302a71a8df77fca4d176066479a3f.ctex"]
 
 [params]
 

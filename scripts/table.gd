@@ -1,7 +1,7 @@
 extends Node2D
 
 #var table_sprite
-#var table_highlight_sprite
+var table_highlight_sprite
 
 var patron1 = null
 var patron2 = null
@@ -16,7 +16,8 @@ var level
 func _ready():
 	level = get_node("/root/Level")
 	#table_sprite = get_node("Table")
-	#table_highlight_sprite = get_node("TableHighlight")
+	table_highlight_sprite = get_node("TableHighlight")
+	table_highlight_sprite.hide()
 
 func add_patron(patron):
 	if (patron1 == null):
@@ -85,12 +86,12 @@ func get_free_position():
 	return get_node("PatronPosition2")
 
 func _on_mouse_entered():
-	#if (!is_full()):
+	if (!is_full()):
 		#table_sprite.hide()
-		#table_highlight_sprite.show()
+		table_highlight_sprite.show()
 	level.set_target_table(self)
 
 func _on_mouse_exited():
-	#table_highlight_sprite.hide()
+	table_highlight_sprite.hide()
 	#table_sprite.show()
 	level.set_target_table(null)

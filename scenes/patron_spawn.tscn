@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2h72hannpwp3"]
 
 [ext_resource type="Script" path="res://scripts/spawn_stats_label.gd" id="1_m56pe"]
-[ext_resource type="Texture2D" uid="uid://grjii0m003fk" path="res://images/IncomerDescription.png" id="1_qscsu"]
+[ext_resource type="Texture2D" uid="uid://grjii0m003fk" path="res://images/ui/IncomerDescription.png" id="1_qscsu"]
 
 [node name="PatronSpawn" type="Node2D"]
 z_index = 10

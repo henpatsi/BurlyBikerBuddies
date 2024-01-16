@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjayh376kcu15"
-path="res://.godot/imported/Select5.png-927b9fafec479b669c1b273b0b1a80a6.ctex"
+uid="uid://d30431q36co1p"
+path="res://.godot/imported/SitterDescription.png-228a8f81f2b16606d0b7d9639b647bdf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/Select5.png"
-dest_files=["res://.godot/imported/Select5.png-927b9fafec479b669c1b273b0b1a80a6.ctex"]
+source_file="res://images/ui/SitterDescription.png"
+dest_files=["res://.godot/imported/SitterDescription.png-228a8f81f2b16606d0b7d9639b647bdf.ctex"]
 
 [params]
 

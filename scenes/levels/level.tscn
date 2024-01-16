@@ -1,17 +1,22 @@
-[gd_scene load_steps=19 format=3 uid="uid://dfap2j2to0g7m"]
+[gd_scene load_steps=24 format=3 uid="uid://dfap2j2to0g7m"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_twgjg"]
-[ext_resource type="Texture2D" uid="uid://bclglr116nwe1" path="res://images/bar.png" id="2_poojc"]
+[ext_resource type="Texture2D" uid="uid://bclglr116nwe1" path="res://images/bar/bar.png" id="2_poojc"]
 [ext_resource type="PackedScene" uid="uid://ddshbf5is1qw0" path="res://scenes/table.tscn" id="3_dxibd"]
 [ext_resource type="PackedScene" uid="uid://b2h72hannpwp3" path="res://scenes/patron_spawn.tscn" id="4_4umbx"]
-[ext_resource type="Texture2D" uid="uid://bdnlqydleqj8" path="res://images/TopChair.png" id="4_bx5wx"]
-[ext_resource type="Texture2D" uid="uid://c52wdx0gn8qi2" path="res://images/ChairTableTop.png" id="5_13fej"]
+[ext_resource type="Texture2D" uid="uid://bdnlqydleqj8" path="res://images/bar/TopChair.png" id="4_bx5wx"]
+[ext_resource type="Texture2D" uid="uid://c52wdx0gn8qi2" path="res://images/bar/ChairTableTop.png" id="5_13fej"]
 [ext_resource type="PackedScene" uid="uid://dqyh0d4yaetbx" path="res://scenes/patron_info.tscn" id="5_nimfu"]
 [ext_resource type="Script" path="res://scripts/stats_tracker.gd" id="6_f8xyf"]
+[ext_resource type="Texture2D" uid="uid://0fcfpl21lp4p" path="res://images/highlight/Select2.png" id="7_btn67"]
+[ext_resource type="Texture2D" uid="uid://peixweug3c0g" path="res://images/highlight/Select1.png" id="7_qylj7"]
 [ext_resource type="FontFile" uid="uid://eygcldwhvkok" path="res://fonts/lunchds.ttf" id="7_sqh20"]
 [ext_resource type="Script" path="res://scripts/audio.gd" id="8_5i7w8"]
 [ext_resource type="AudioStream" uid="uid://cfttus5csl4fr" path="res://audio/music/SFX_Music&Ambience2.wav" id="9_hifen"]
-[ext_resource type="Texture2D" uid="uid://b5rwc8t18nb8k" path="res://images/Patio.png" id="10_k5tov"]
+[ext_resource type="Texture2D" uid="uid://brgon3p54ufc5" path="res://images/highlight/Select3.png" id="9_vj0ts"]
+[ext_resource type="Texture2D" uid="uid://bjayh376kcu15" path="res://images/highlight/Select5.png" id="9_y7hi0"]
+[ext_resource type="Texture2D" uid="uid://b5rwc8t18nb8k" path="res://images/bar/Patio.png" id="10_k5tov"]
+[ext_resource type="Texture2D" uid="uid://cdw25v7aq8kgh" path="res://images/highlight/Select6.png" id="10_np633"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_os8p8"]
 radius = 53.0
@@ -77,6 +82,10 @@ scale = Vector2(-2.1, 2.1)
 position = Vector2(-87, -42)
 scale = Vector2(2.1, 2.1)
 
+[node name="TableHighlight" parent="tables/table" index="4"]
+position = Vector2(-79, -29)
+texture = ExtResource("7_btn67")
+
 [node name="table2" parent="tables" instance=ExtResource("3_dxibd")]
 z_index = -10
 position = Vector2(597, 480)
@@ -92,6 +101,10 @@ scale = Vector2(-3.4, 3.4)
 [node name="PatronPosition2" parent="tables/table2" index="3"]
 position = Vector2(-141, -63)
 scale = Vector2(3.4, 3.4)
+
+[node name="TableHighlight" parent="tables/table2" index="4"]
+position = Vector2(-117, -210)
+texture = ExtResource("7_qylj7")
 
 [node name="table3" parent="tables" instance=ExtResource("3_dxibd")]
 z_index = -50
@@ -125,6 +138,10 @@ scale = Vector2(-1.2, 1.2)
 position = Vector2(-47, -36)
 scale = Vector2(1.2, 1.2)
 
+[node name="TableHighlight" parent="tables/table4" index="4"]
+position = Vector2(-241, 105)
+texture = ExtResource("9_y7hi0")
+
 [node name="table5" parent="tables" instance=ExtResource("3_dxibd")]
 z_index = -20
 position = Vector2(861, 309)
@@ -140,6 +157,10 @@ scale = Vector2(-2.4, 2.4)
 [node name="PatronPosition2" parent="tables/table5" index="3"]
 position = Vector2(6.99997, -2)
 scale = Vector2(-2.6, 2.6)
+
+[node name="TableHighlight" parent="tables/table5" index="4"]
+position = Vector2(-381, -39)
+texture = ExtResource("10_np633")
 
 [node name="table6" parent="tables" instance=ExtResource("3_dxibd")]
 z_index = -30
@@ -159,6 +180,10 @@ scale = Vector2(1.7, 1.7)
 [node name="PatronPosition2" parent="tables/table6" index="3"]
 position = Vector2(44, -47)
 scale = Vector2(1.8, 1.8)
+
+[node name="TableHighlight" parent="tables/table6" index="4"]
+position = Vector2(231, 43)
+texture = ExtResource("9_vj0ts")
 
 [node name="PatronSpawn" parent="." instance=ExtResource("4_4umbx")]
 visible = false

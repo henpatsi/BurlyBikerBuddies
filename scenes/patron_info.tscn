@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dqyh0d4yaetbx"]
 
-[ext_resource type="Texture2D" uid="uid://d30431q36co1p" path="res://images/SitterDescription.png" id="1_d6ya1"]
+[ext_resource type="Texture2D" uid="uid://d30431q36co1p" path="res://images/ui/SitterDescription.png" id="1_d6ya1"]
 [ext_resource type="Script" path="res://scripts/patron_info_label.gd" id="2_yafwp"]
 
 [node name="PatronInfo" type="Node2D"]

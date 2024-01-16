@@ -122,5 +122,8 @@ position = Vector2(130, -20)
 [node name="PatronPosition2" type="Node2D" parent="."]
 position = Vector2(-140, -23)
 
+[node name="TableHighlight" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
