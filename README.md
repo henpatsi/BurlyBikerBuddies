@@ -7,7 +7,7 @@ You can play the game on [itch.io](https://tupperwarefan.itch.io/burly-biker-bud
 #### Credits:
 
 - Programmer and designer: Henri Pätsi
-- Artist and designer: Anton Pätsi
+- Artist, voice actor, and designer: Anton Pätsi
  
 #### Premade assets:
 
