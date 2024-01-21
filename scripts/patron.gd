@@ -1,7 +1,5 @@
 extends Node2D
 
-var sprite
-
 var table = null
 
 var stats_label = null
@@ -10,26 +8,37 @@ var patron_spawn
 var stats_tacker
 var audio_player
 
+var patron_builder
+var textures = {}
+
 var level
 
 func _ready():
-	sprite = get_node("Sprite")
 	level = get_node("/root/Level")
 	stats_tacker = get_node("/root/Level/PatronInfo")
 	patron_spawn = get_node("/root/Level/PatronSpawn")
 	stats_label = get_node("/root/Level/PatronSpawn/StatsLabel")
 	audio_player = get_node("/root/Level/Audio")
-	get_random_texture()
+	patron_builder = get_node("../PatronBuilder")
+	textures = patron_builder.generate_front_textures()
+	set_textures()
 	set_random_stats()
 	stats_label.write_stats(stats)
 	patron_spawn.show()
 	audio_player.play_sfx("door")
+	audio_player.play_dialogue()
 
-func get_random_texture():
-	var index_texture
-	index_texture = stats_tacker.generate_front_texture()
-	stats["texture_index"] = index_texture[0]
-	sprite.set_texture(index_texture[1])
+func set_textures():
+	var head = get_node("Head")
+	get_node("Body").set_texture(textures["body"])
+	head.set_texture(textures["head"])
+	get_node("Body/Outline").set_texture(textures["body_outline"])
+	get_node("Head/Outline").set_texture(textures["head_outline"])
+	for accessory_texture in textures["accessories"]:
+		var sprite = Sprite2D.new()
+		head.add_child(sprite)
+		sprite.z_index = 2
+		sprite.set_texture(accessory_texture)
 
 func set_random_stats():
 	stats["name"] = stats_tacker.generate_name()
@@ -59,6 +68,5 @@ func put_patron_to_table():
 	table.add_patron(sitting_patron)
 	sitting_patron.fit_to_table()
 	patron_spawn.hide()
-	sitting_patron.set_texture(stats["texture_index"])
 	audio_player.play_sfx("sit")
 	queue_free()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dfap2j2to0g7m"]
+[gd_scene load_steps=26 format=3 uid="uid://dfap2j2to0g7m"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_twgjg"]
 [ext_resource type="Texture2D" uid="uid://bclglr116nwe1" path="res://images/bar/bar.png" id="2_poojc"]
@@ -13,10 +13,12 @@
 [ext_resource type="FontFile" uid="uid://eygcldwhvkok" path="res://fonts/lunchds.ttf" id="7_sqh20"]
 [ext_resource type="Script" path="res://scripts/audio.gd" id="8_5i7w8"]
 [ext_resource type="AudioStream" uid="uid://cfttus5csl4fr" path="res://audio/music/SFX_Music&Ambience2.wav" id="9_hifen"]
+[ext_resource type="Texture2D" uid="uid://dlunoclndndgm" path="res://images/highlight/Select4.png" id="9_ja5dj"]
 [ext_resource type="Texture2D" uid="uid://brgon3p54ufc5" path="res://images/highlight/Select3.png" id="9_vj0ts"]
 [ext_resource type="Texture2D" uid="uid://bjayh376kcu15" path="res://images/highlight/Select5.png" id="9_y7hi0"]
 [ext_resource type="Texture2D" uid="uid://b5rwc8t18nb8k" path="res://images/bar/Patio.png" id="10_k5tov"]
 [ext_resource type="Texture2D" uid="uid://cdw25v7aq8kgh" path="res://images/highlight/Select6.png" id="10_np633"]
+[ext_resource type="Script" path="res://scripts/patron_builder.gd" id="14_cwqnc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_os8p8"]
 radius = 53.0
@@ -122,6 +124,10 @@ scale = Vector2(-1.2, 1.2)
 position = Vector2(-47, -36)
 scale = Vector2(1.2, 1.2)
 
+[node name="TableHighlight" parent="tables/table3" index="4"]
+position = Vector2(-16, 104)
+texture = ExtResource("9_ja5dj")
+
 [node name="table4" parent="tables" instance=ExtResource("3_dxibd")]
 z_index = -50
 position = Vector2(721, 165)
@@ -189,6 +195,15 @@ texture = ExtResource("9_vj0ts")
 visible = false
 z_index = 0
 
+[node name="StatsLabelBackground" parent="PatronSpawn" index="0"]
+z_index = 20
+
+[node name="StatsLabel" parent="PatronSpawn" index="1"]
+z_index = 25
+
+[node name="PatronBuilder" type="Node" parent="PatronSpawn"]
+script = ExtResource("14_cwqnc")
+
 [node name="PatronInfo" parent="." instance=ExtResource("5_nimfu")]
 visible = false
 z_index = 50
@@ -219,6 +234,7 @@ autoplay = true
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="Audio"]
 
 [node name="DialoguePlayer" type="AudioStreamPlayer" parent="Audio"]
+volume_db = -10.0
 
 [editable path="tables/table"]
 [editable path="tables/table2"]

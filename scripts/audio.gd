@@ -6,34 +6,48 @@ var music_player
 var sfx_player
 var dialogue_player
 
-var sfx_dir = "res://audio/sfx/"
-var door_sfxs = ["SFX_DoorOpen1.wav", "SFX_DoorOpen2.wav"]
-var sit_sfxs = ["SFX_Sit3.wav", "SFX_Sit4.wav"]
+var door_sfx_dir = "res://audio/sfx/door/"
+var sit_sfx_dir = "res://audio/sfx/sit/"
+var door_sfxs = []
+var sit_sfxs = []
 
 var dialogue_dir = "res://audio/dialogue/"
-var dialogue_sfxs = [""]
+var dialogues = []
 
 func _ready():
 	music_player = get_node("MusicPlayer")
 	sfx_player = get_node("SFXPlayer")
 	dialogue_player = get_node("DialoguePlayer")
+	load_sound_files(sit_sfxs, sit_sfx_dir)
+	load_sound_files(door_sfxs, door_sfx_dir)
+	load_sound_files(dialogues, dialogue_dir)
 
 func play_sfx(type):
-	sfx_player.stream = load(get_random_sfx(type))
+	sfx_player.stream = get_random_sfx(type)
 	sfx_player.play()
 	
 func play_dialogue():
-	sfx_player.stream = load(get_random_dialogue())
-	sfx_player.play()
+	dialogue_player.stream = get_random_dialogue()
+	dialogue_player.play()
 
 func get_random_sfx(type):
-	var clip_name
 	if type == "door":
-		clip_name = door_sfxs[rng.randi_range(0, door_sfxs.size() - 1)]
+		return door_sfxs[rng.randi_range(0, door_sfxs.size() - 1)]
 	if type == "sit":
-		clip_name = sit_sfxs[rng.randi_range(0, sit_sfxs.size() - 1)]
-	return sfx_dir + clip_name
+		return sit_sfxs[rng.randi_range(0, sit_sfxs.size() - 1)]
 
 func get_random_dialogue():
-	var clip_name = dialogue_sfxs[rng.randi_range(0, dialogue_sfxs.size() - 1)]
-	return dialogue_dir + clip_name
+	return dialogues[rng.randi_range(0, dialogues.size() - 1)]
+
+func load_sound_files(into_list, dir_str):
+	var dir = DirAccess.open(dir_str)
+	if (!dir):
+		print("Error accesssing", dir_str)
+	dir.list_dir_begin()
+	var audio_file
+	var file_name = dir.get_next()
+	while file_name != "":
+		if file_name.ends_with(".wav"):
+			audio_file = load(dir_str + file_name)
+			into_list.append(audio_file)
+		file_name = dir.get_next()

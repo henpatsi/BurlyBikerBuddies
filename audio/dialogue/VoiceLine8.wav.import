@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://bf7fr8ramjifh"
-path="res://.godot/imported/SFX_Sit4.wav-452b6f2d62f775e9c3621cf81b0397ec.sample"
+uid="uid://vdvjrv187eb8"
+path="res://.godot/imported/VoiceLine8.wav-e640adde684b8764fe071299184b1880.sample"
 
 [deps]
 
-source_file="res://audio/sfx/SFX_Sit4.wav"
-dest_files=["res://.godot/imported/SFX_Sit4.wav-452b6f2d62f775e9c3621cf81b0397ec.sample"]
+source_file="res://audio/dialogue/VoiceLine8.wav"
+dest_files=["res://.godot/imported/VoiceLine8.wav-e640adde684b8764fe071299184b1880.sample"]
 
 [params]
 
