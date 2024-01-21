@@ -10,6 +10,8 @@ var patron_info
 var patron_info_label
 var showing_patron = null
 
+var last_name_index = null
+
 func _ready():
 	patron_info = get_node("/root/Level/PatronInfo")
 	patron_info_label = get_node("/root/Level/PatronInfo/PatronInfoLabel")
@@ -47,7 +49,10 @@ func hide_patron_stats():
 	showing_patron = null
 
 func generate_name():
-	return names[rng.randi_range(0, names.size() - 1)]
+	var index = rng.randi_range(0, names.size() - 1)
+	while (index == last_name_index):
+		index = rng.randi_range(0, names.size() - 1)
+	return names[index]
 	
 func generate_age():
 	return (rng.randi_range(30, 70))

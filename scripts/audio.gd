@@ -13,6 +13,7 @@ var sit_sfxs = []
 
 var dialogue_dir = "res://audio/dialogue/"
 var dialogues = []
+var last_dialogues_index = null
 
 func _ready():
 	music_player = get_node("MusicPlayer")
@@ -37,7 +38,10 @@ func get_random_sfx(type):
 		return sit_sfxs[rng.randi_range(0, sit_sfxs.size() - 1)]
 
 func get_random_dialogue():
-	return dialogues[rng.randi_range(0, dialogues.size() - 1)]
+	var index = rng.randi_range(0, dialogues.size() - 1)
+	while (index == last_dialogues_index):
+		index = rng.randi_range(0, dialogues.size() - 1)
+	return dialogues[index]
 
 func load_sound_files(into_list, dir_str):
 	var dir = DirAccess.open(dir_str)

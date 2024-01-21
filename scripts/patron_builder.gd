@@ -43,7 +43,6 @@ func load_hair_textures(tex_list, parent_dir_str):
 		var hair_colors = []
 		load_dir_textures(hair_colors, parent_dir_str + dir_name + "/")
 		tex_list.append(hair_colors)
-		
 
 func load_dir_textures(tex_list, dir_str):
 	var dir = DirAccess.open(dir_str)
