@@ -18,9 +18,14 @@ func fit_to_table():
 
 func set_ordering():
 	self.z_index = 0
-	
-func set_stats(stats, table):
-	self.stats = stats
+
+func set_texture(index):
+	var sprite = get_node("Sprite")
+	var texture = stats_tracker.generate_side_texture(index)
+	sprite.set_texture(texture)
+
+func set_stats(start_stats, table):
+	self.stats = start_stats
 	stats["table"] = table
 	
 func get_stats():

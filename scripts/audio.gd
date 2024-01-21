@@ -22,7 +22,7 @@ func play_sfx(type):
 	sfx_player.stream = load(get_random_sfx(type))
 	sfx_player.play()
 	
-func play_dialogue(type):
+func play_dialogue():
 	sfx_player.stream = load(get_random_dialogue())
 	sfx_player.play()
 

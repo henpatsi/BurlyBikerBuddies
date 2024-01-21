@@ -1,12 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://b4nnyrvbxbin6"]
 
 [ext_resource type="Script" path="res://scripts/patron.gd" id="1_smm6v"]
-[ext_resource type="Texture2D" uid="uid://7jawjnwn5evq" path="res://images/characters/Front_Short_Neutral.png" id="2_fyvk3"]
+[ext_resource type="Texture2D" uid="uid://7jawjnwn5evq" path="res://images/characters/front/front1.png" id="2_fyvk3"]
 
 [node name="patron" type="Node2D"]
 script = ExtResource("1_smm6v")
 
-[node name="FrontShortNeutral" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(480, 270)
 scale = Vector2(3, 3)
 texture = ExtResource("2_fyvk3")
