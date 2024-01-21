@@ -37,8 +37,18 @@ func set_textures():
 	for accessory_texture in textures["accessories"]:
 		var sprite = Sprite2D.new()
 		head.add_child(sprite)
-		sprite.z_index = 2
+		sprite.z_index = 5
 		sprite.set_texture(accessory_texture)
+	if (textures["hair"] != null):
+		var sprite = Sprite2D.new()
+		head.add_child(sprite)
+		sprite.z_index = 2
+		sprite.set_texture(textures["hair"])
+	if (textures["beard"] != null):
+		var sprite = Sprite2D.new()
+		head.add_child(sprite)
+		sprite.z_index = 2
+		sprite.set_texture(textures["beard"])
 
 func set_random_stats():
 	stats["name"] = stats_tacker.generate_name()
