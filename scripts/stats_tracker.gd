@@ -52,6 +52,7 @@ func generate_name():
 	var index = rng.randi_range(0, names.size() - 1)
 	while (index == last_name_index):
 		index = rng.randi_range(0, names.size() - 1)
+	last_name_index = index
 	return names[index]
 	
 func generate_age():

@@ -41,6 +41,7 @@ func get_random_dialogue():
 	var index = rng.randi_range(0, dialogues.size() - 1)
 	while (index == last_dialogues_index):
 		index = rng.randi_range(0, dialogues.size() - 1)
+	last_dialogues_index = index
 	return dialogues[index]
 
 func load_sound_files(into_list, dir_str):
