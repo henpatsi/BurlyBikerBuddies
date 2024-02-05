@@ -8,7 +8,7 @@ var topics
 
 var patron_info
 var patron_info_label
-var showing_patron = null
+var patron_stats_showing = []
 
 var last_name_index = null
 
@@ -35,18 +35,18 @@ func load_preference_file(file_path, target_dict):
 		var long = split[1].split("\n", false)
 		target_dict[split[0]] = long
 
-func _process(_delta):
-	if (showing_patron == null):
-		patron_info.hide()
-
 func show_patron_stats(patron):
 	patron_info_label.write_patron_stats(patron.get_stats())
 	patron_info.show()
-	showing_patron = patron
+	patron_stats_showing.append(patron)
 
-func hide_patron_stats():
-	patron_info.hide()
-	showing_patron = null
+func hide_patron_stats(patron):
+	var patron_index = patron_stats_showing.find(patron)
+	if patron_index == -1:
+		return
+	patron_stats_showing.remove_at(patron_index)
+	if (patron_stats_showing.is_empty()):
+		patron_info.hide()
 
 func generate_name():
 	var index = rng.randi_range(0, names.size() - 1)

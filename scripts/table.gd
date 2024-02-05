@@ -29,8 +29,8 @@ func add_patron(patron):
 	resolve_relationship()
 	
 func remove_patrons():
-	patron1.queue_free()
-	patron2.queue_free()
+	patron1.remove_patron()
+	patron2.remove_patron()
 	
 func check_patron_match():
 	points = 1

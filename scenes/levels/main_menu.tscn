@@ -62,7 +62,7 @@ text = "Seat bikers by clicking on tables, the bench, or the stools.
 
 Try to match their likes and dislikes to form long lasting friendships.
 
-You can hover over the seated guests' heads to check their preference sheet."
+You can hover over the seated guests to check their preference sheet."
 fit_content = true
 
 [connection signal="pressed" from="Buttons/StartButton" to="." method="_on_start_button_pressed"]

@@ -58,6 +58,9 @@ func load_dir_textures(tex_list, dir_str):
 	var texture
 	var file_name = dir.get_next()
 	while file_name != "":
+		# Needed for game export
+		if file_name.ends_with(".import"):
+			file_name = file_name.replace(".import", "")
 		if file_name.ends_with(".png"):
 			texture = load(dir_str + file_name)
 			tex_list.append(texture)

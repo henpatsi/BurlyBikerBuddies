@@ -1,7 +1,5 @@
 extends Node2D
 
-#var patron_offset_x = 100
-#var patron_offset_y = 20
 var patron_scale = 2
 var table_position
 
@@ -54,8 +52,12 @@ func set_stats(start_stats, table):
 func get_stats():
 	return stats
 
+func remove_patron():
+	stats_tracker.hide_patron_stats(self)
+	queue_free()
+
 func _on_mouse_entered():
 	stats_tracker.show_patron_stats(self)
 
 func _on_mouse_exited():
-	stats_tracker.hide_patron_stats()
+	stats_tracker.hide_patron_stats(self)

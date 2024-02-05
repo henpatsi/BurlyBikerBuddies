@@ -52,6 +52,9 @@ func load_sound_files(into_list, dir_str):
 	var audio_file
 	var file_name = dir.get_next()
 	while file_name != "":
+		# Needed for game export
+		if file_name.ends_with(".import"):
+			file_name = file_name.replace(".import", "")
 		if file_name.ends_with(".wav"):
 			audio_file = load(dir_str + file_name)
 			into_list.append(audio_file)
