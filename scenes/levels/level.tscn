@@ -50,19 +50,19 @@ scale = Vector2(3, 3)
 texture = ExtResource("2_poojc")
 
 [node name="Patio" type="Sprite2D" parent="."]
-z_index = -45
+z_index = -70
 position = Vector2(480, 270)
 scale = Vector2(3, 3.10653)
 texture = ExtResource("10_k5tov")
 
 [node name="TopChair" type="Sprite2D" parent="."]
-z_index = -15
+z_index = -25
 position = Vector2(480, 270)
 scale = Vector2(3, 3)
 texture = ExtResource("4_bx5wx")
 
 [node name="ChairTableTop" type="Sprite2D" parent="."]
-z_index = -25
+z_index = -55
 position = Vector2(480, 270)
 scale = Vector2(3, 3)
 texture = ExtResource("5_13fej")
@@ -70,26 +70,26 @@ texture = ExtResource("5_13fej")
 [node name="tables" type="Node" parent="."]
 
 [node name="table" parent="tables" instance=ExtResource("3_dxibd")]
-z_index = -20
+z_index = -50
 position = Vector2(559, 299)
 
 [node name="CollisionShape2D" parent="tables/table" index="1"]
 visible = false
 
 [node name="PatronPosition1" parent="tables/table" index="2"]
-position = Vector2(82, -44)
-scale = Vector2(-2.1, 2.1)
+position = Vector2(90, -28)
+scale = Vector2(-0.7, 0.7)
 
 [node name="PatronPosition2" parent="tables/table" index="3"]
-position = Vector2(-87, -42)
-scale = Vector2(2.1, 2.1)
+position = Vector2(-103, -30)
+scale = Vector2(0.7, 0.7)
 
 [node name="TableHighlight" parent="tables/table" index="4"]
 position = Vector2(-79, -29)
 texture = ExtResource("7_btn67")
 
 [node name="table2" parent="tables" instance=ExtResource("3_dxibd")]
-z_index = -10
+z_index = -20
 position = Vector2(597, 480)
 
 [node name="CollisionShape2D" parent="tables/table2" index="1"]
@@ -97,19 +97,18 @@ position = Vector2(6, -31)
 shape = SubResource("CapsuleShape2D_os8p8")
 
 [node name="PatronPosition1" parent="tables/table2" index="2"]
-position = Vector2(160, -60)
-scale = Vector2(-3.4, 3.4)
+position = Vector2(183, -41)
+scale = Vector2(-1, 1)
 
 [node name="PatronPosition2" parent="tables/table2" index="3"]
-position = Vector2(-141, -63)
-scale = Vector2(3.4, 3.4)
+position = Vector2(-170, -41)
 
 [node name="TableHighlight" parent="tables/table2" index="4"]
 position = Vector2(-117, -210)
 texture = ExtResource("7_qylj7")
 
 [node name="table3" parent="tables" instance=ExtResource("3_dxibd")]
-z_index = -50
+z_index = -75
 position = Vector2(496, 166)
 
 [node name="CollisionShape2D" parent="tables/table3" index="1"]
@@ -117,19 +116,19 @@ position = Vector2(-3, -16.5)
 shape = SubResource("RectangleShape2D_ttjdc")
 
 [node name="PatronPosition1" parent="tables/table3" index="2"]
-position = Vector2(47, -36)
-scale = Vector2(-1.2, 1.2)
+position = Vector2(52, -31)
+scale = Vector2(-0.42, 0.42)
 
 [node name="PatronPosition2" parent="tables/table3" index="3"]
-position = Vector2(-47, -36)
-scale = Vector2(1.2, 1.2)
+position = Vector2(-56, -31)
+scale = Vector2(0.42, 0.42)
 
 [node name="TableHighlight" parent="tables/table3" index="4"]
 position = Vector2(-16, 104)
 texture = ExtResource("9_ja5dj")
 
 [node name="table4" parent="tables" instance=ExtResource("3_dxibd")]
-z_index = -50
+z_index = -75
 position = Vector2(721, 165)
 
 [node name="CollisionShape2D" parent="tables/table4" index="1"]
@@ -137,19 +136,19 @@ position = Vector2(0.5, -18)
 shape = SubResource("RectangleShape2D_imc8f")
 
 [node name="PatronPosition1" parent="tables/table4" index="2"]
-position = Vector2(47, -30)
-scale = Vector2(-1.2, 1.2)
+position = Vector2(51, -32)
+scale = Vector2(-0.42, 0.42)
 
 [node name="PatronPosition2" parent="tables/table4" index="3"]
-position = Vector2(-47, -36)
-scale = Vector2(1.2, 1.2)
+position = Vector2(-55, -31)
+scale = Vector2(0.42, 0.42)
 
 [node name="TableHighlight" parent="tables/table4" index="4"]
 position = Vector2(-241, 105)
 texture = ExtResource("9_y7hi0")
 
 [node name="table5" parent="tables" instance=ExtResource("3_dxibd")]
-z_index = -20
+z_index = -45
 position = Vector2(861, 309)
 
 [node name="CollisionShape2D" parent="tables/table5" index="1"]
@@ -157,19 +156,20 @@ position = Vector2(22.5001, 0.625153)
 shape = SubResource("RectangleShape2D_f02uo")
 
 [node name="PatronPosition1" parent="tables/table5" index="2"]
-position = Vector2(-47, -48)
-scale = Vector2(-2.4, 2.4)
+position = Vector2(-16, -21)
+scale = Vector2(-0.8, 0.8)
 
 [node name="PatronPosition2" parent="tables/table5" index="3"]
-position = Vector2(6.99997, -2)
-scale = Vector2(-2.6, 2.6)
+z_index = 5
+position = Vector2(20, 21)
+scale = Vector2(-0.9, 0.9)
 
 [node name="TableHighlight" parent="tables/table5" index="4"]
 position = Vector2(-381, -39)
 texture = ExtResource("10_np633")
 
 [node name="table6" parent="tables" instance=ExtResource("3_dxibd")]
-z_index = -30
+z_index = -60
 position = Vector2(249, 227)
 
 [node name="RelationshipIcons" parent="tables/table6" index="0"]
@@ -180,12 +180,13 @@ position = Vector2(28.4997, -3.99965)
 shape = SubResource("RectangleShape2D_hujry")
 
 [node name="PatronPosition1" parent="tables/table6" index="2"]
-position = Vector2(100, -55)
-scale = Vector2(1.7, 1.7)
+position = Vector2(101, -36)
+scale = Vector2(0.6, 0.6)
 
 [node name="PatronPosition2" parent="tables/table6" index="3"]
-position = Vector2(44, -47)
-scale = Vector2(1.8, 1.8)
+z_index = 5
+position = Vector2(40, -29)
+scale = Vector2(0.65, 0.65)
 
 [node name="TableHighlight" parent="tables/table6" index="4"]
 position = Vector2(231, 43)
